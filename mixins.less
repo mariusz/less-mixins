@@ -1,0 +1,83 @@
+// LessCSS mixin collection
+// Mariusz Cieśla <hi@mariusz.cc>
+
+// Mixins
+.inset-box { 
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 3px 3px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 3px 3px rgba(0,0,0,.25);
+  -ms-box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 3px 3px rgba(0,0,0,.25);
+  -o-box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 3px 3px rgba(0,0,0,.25);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 3px 3px rgba(0,0,0,.25);
+}
+
+.inset-text {
+  text-shadow:0 1px 0 rgba(255,255,255,.5);
+}
+
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+}
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+
+.opacity(@opacity: 100) {
+  -moz-opacity: @opacity / 100;
+  -webkit-opacity: @opacity / 100;
+  -ms-opacity: @opacity / 100;
+  -o-opacity: @opacity / 100;
+  opacity: @opacity / 100;
+
+  filter: e(%("alpha(opacity=%d)", @opacity));
+}
+
+// Clearfix from Twitter Bootstrap
+.clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    display:table;
+    content: "";
+  }
+
+  &:after {
+    clear:both;
+  }
+}
+
+// IE7 inline-block hack
+.ie7-inline-block {
+  *display: inline;
+  *zoom: 1;
+}
+
+// Size
+.size(@width: 5px, @height: 5px) {
+  width: @width;
+  height: @height;
+}
